@@ -1,35 +1,15 @@
-console.log("test");
+//미션1 - new Date()를 활용해서 시간,분,초를 각각 span안에 출력
+//미션2 - 현재 시간이 13시를 넘기면 em안쪽의 'am'을 'pm'로 출력
+const title = document.querySelector("h1");
+const [em, spanHr, spanMin, spanSec] = title.children;
 
 const now = new Date();
+const hr = now.getHours();
+const min = now.getMinutes();
+const sec = now.getSeconds();
+let apm = hr < 13 ? "am" : "pm";
 
-
-console.log(now);
-
-//년도값 반환
-console.log(now.getFullYear());
-
-//월 반환(순서값, 1월=0)
-// console.log(now.getMonth()); 월이 아니라 순서값이 나옴 9월 -> 8
-
-const month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-console.log(month[now.getMonth()]); //설정하면 그 순서값으로 나옴
-
-//일 반환
-console.log(now.getDate());
-
-//요일(순서값, 일=0)
-console.log(now.getDay());
-
-const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-console.log(days[now.getDay()]);
-
-console.log(now.getHours());
-
-console.log(now.getMinutes());
-
-console.log(now.getSeconds());
-
-//우리나라 시간대를 전세계 표준시로 변환
-// const gmtNow = now.toGMTString();
-const gmtNow = now.toUTCString(); //이름이 바뀜~
-console.log(gmtNow);
+em.innerText = apm;
+spanHr.innerText = hr;
+spanMin.innerText = min;
+spanSec.innerText = sec;
