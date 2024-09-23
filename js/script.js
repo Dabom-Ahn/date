@@ -28,3 +28,8 @@ console.log(now.getHours());
 console.log(now.getMinutes());
 
 console.log(now.getSeconds());
+
+//우리나라 시간대를 전세계 표준시로 변환
+// const gmtNow = now.toGMTString();
+const gmtNow = now.toUTCString(); //이름이 바뀜~
+console.log(gmtNow);
